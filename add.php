@@ -63,14 +63,13 @@ if(isset($_POST['submit']))
             $gallery_name = $row['gallery_name'];
         }
     }
-
-    if($present_gall == 0)
-    {
-        $gal_id = $last_insert_id;
-    }else{
-        $gal_id = $present_gall;
-    }
-    
+        //check parent gallery status and insert id accordingly
+        if($present_gall == 0)
+        {
+            $gal_id = $last_insert_id;
+        }else{
+            $gal_id = $present_gall;
+        }
     if($rar_status == 2)
     {
         if(isset($_FILES['files'])){
@@ -282,7 +281,7 @@ if(isset($_POST['submit']))
                                 <div class="rarupload" style="display: none;">
                                     <label>Choose a zip file to upload:</label><input class="form-control" type="file" name="zip_file" style="width:60%;" /></div>
                                 </div>
-                           <button type="submit" name="submit" class="btn btn-default">Submit Button</button>  
+                           <button type="submit" name="submit" class="btn btn-primary">Submit Button</button>  
                         </div>
                     </form>
                 <!-- /.row -->
